@@ -1,0 +1,7 @@
+<%= form_with model: @user, url: sessions_path, local: true do |f| %>
+  <div class="field-row">
+    <%= f.label :username %>
+    <%= f.text_field :username %>
+  </div>
+  <%= f.submit "Signup" %>
+<% end %>
