@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :set_categories, only: [:new]
+  before_action :authenticate, only: %i[new create vote]
 
   def index
     @articles = Article.belong_to_category(params[:category])
