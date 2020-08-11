@@ -1,0 +1,31 @@
+class ArticlesController < ApplicationController
+  before_action :set_categories, only: [:new]
+
+  def index
+    @articles = Article.belong_to_category(params[:category])
+  end
+
+  def new
+    @article = Article.new
+  end
+
+  def create
+    @article = current_user.articles.new(article_params)
+    if @article.save
+      redirect_to root_path, notice: 'Account created successfully!'
+    else
+      set_categories
+      render 'new'
+    end
+  end
+
+  private
+
+  def article_params
+    params.require(:article).permit(:title, :text, :image, category_ids: [])
+  end
+
+  def set_categories
+    @categories = Category.pluck('name', 'id')
+  end
+end

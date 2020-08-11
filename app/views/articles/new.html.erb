@@ -1,0 +1,20 @@
+<%= @article.errors.full_messages %>
+<%= form_with model: @article, local: true do |f| %>
+  <div class="field-row">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field-row">
+    <%= f.label :text %>
+    <%= f.text_area :text %>
+  </div>
+  <div class="field-row">
+    <%= f.label :image %>
+    <%= f.file_field :image %>
+  </div>
+  <div class="field-row">
+    <%= f.label :category_ids, 'Categories' %>
+    <%= f.select(:category_ids, @categories, { prompt: "Please select" }, { multiple: true, size: 5 }) %>
+  </div>
+  <%= f.submit "Signup" %>
+<% end %>
