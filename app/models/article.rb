@@ -4,13 +4,13 @@ class Article < ApplicationRecord
   has_many :votes
   has_many :voters, through: :votes, source: :user
 
-  scope :belong_to_category, -> (category) do
+  scope :belong_to_category, lambda { |category|
     joins(:categories).where(categories: { id: category }) unless category.nil?
-  end
+  }
 
   def image=(image)
     extension = File.extname(image)
-    path = File.join('uploads', "#{Time.now.to_i}_#{Random.rand(100000000)}#{extension}")
+    path = File.join('uploads', "#{Time.now.to_i}_#{Random.rand(1e9)}#{extension}")
     File.open(Rails.root.join('public', path), 'wb') do |file|
       file.write(image.read)
     end
