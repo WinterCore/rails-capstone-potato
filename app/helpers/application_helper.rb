@@ -19,4 +19,8 @@ module ApplicationHelper
   def render_form_errors(resource)
     render 'partials/form_errors', resource: resource if resource.errors.any?
   end
+
+  def limit_text(text, len = 100)
+    "#{text[..len]}#{text.size > len ? '...' : ''}"
+  end
 end

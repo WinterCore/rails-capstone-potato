@@ -1,0 +1,9 @@
+<%= link_to articles_path(category: category.id), class: 'image-article small' do %>
+  <div class="image-article-image" style="background-image: url('<%= category_article_image(category) %>')">
+  </div>
+  <div class="image-article-bold-title"><%= category.name %></div>
+  <div class="image-article-secondary-title">
+    <%= category_article_title(category) %>
+  </div>
+<% end %>
+

@@ -1,0 +1,20 @@
+footer {
+  font-size: 13px;
+  height: $footer-height;
+  padding: 0 16px;
+
+  .logo {
+    font-weight: 800;
+    font-size: 18px;
+  }
+
+  a {
+    color: $primary;
+    margin-right: 8px;
+  }
+
+  .social-links {
+    a { margin-right: 4px; }
+    img { width: 32px; }
+  }
+}

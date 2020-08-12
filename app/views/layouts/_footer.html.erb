@@ -1,0 +1,26 @@
+<footer class="flex justify-space-between align-center">
+  <div class="logo">
+    POTATO™
+  </div>
+
+  <div class="links">
+    <%= link_to 'Privacy Policy', '#' %>
+    <%= link_to 'Terms & Conditions', '#' %>
+    Copyright <%= Time.current.year %>. All rights reserved
+  </div>
+
+  <div class="flex align-center">
+    Connect with us:&nbsp;&nbsp;
+    <div class="social-links flex">
+      <%= link_to 'https://twitter.com' do %>
+        <%= image_tag 'twitter.svg' %>
+      <% end %>
+      <%= link_to 'https://facebook.com' do %>
+        <%= image_tag 'facebook.svg' %>
+      <% end %>
+      <%= link_to 'https://instagram.com' do %>
+        <%= image_tag 'instagram.svg' %>
+      <% end %>
+    </div>
+  </div>
+</footer>

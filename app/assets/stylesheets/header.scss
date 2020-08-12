@@ -1,20 +1,21 @@
 header {
-  height: 72px;
-  max-height: 72px;
-  flex: 1 0 72px;
+  height: $header-height;
+  max-height: $header-height;
+  flex: 1 0 $header-height;
   position: relative;
   padding: 0 12px;
-  font-family: 'CartoGothic Std Book';
+  font-family: 'CartoGothic Std Book', sans-serif;
   font-size: 14px;
   font-weight: bold;
   color: $secondary;
-  background: #FFF;
+  background: #fff;
 
   .logo {
-    width: 64px;
+    width: 150px;
   }
 
-  &:before, &:after {
+  &::before,
+  &::after {
     content: '';
     height: 4px;
     display: block;
@@ -23,13 +24,13 @@ header {
     left: 0;
   }
 
-  &:before {
+  &::before {
     background-color: $secondary;
     width: 100%;
     z-index: 1;
   }
 
-  &:after {
+  &::after {
     background-color: $red;
     width: 160px;
     z-index: 2;
@@ -37,13 +38,13 @@ header {
 
   nav {
     text-transform: uppercase;
+
     .nav-item + .nav-item {
       margin-left: 12px;
     }
   }
+
   .action-links {
     text-transform: uppercase;
   }
 }
-
-

@@ -1,24 +1,26 @@
-<h3 class="title">Feeling creative?</h3>
-<div class="subtitle">Tell everyone how much you like smoking cabbages.</div>
-<div class="mt-2"><%= render_form_errors @article %></div>
-<%= form_with model: @article, local: true, class: 'mt-5' do |f| %>
-  <div class="field-row">
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-  </div>
-  <div class="field-row">
-    <%= f.label :text %>
-    <%= f.text_area :text %>
-  </div>
-  <div class="field-row">
-    <%= f.label :image %>
-    <%= f.file_field :image %>
-  </div>
-  <div class="field-row">
-    <%= f.label :category_ids, 'Categories' %>
-    <%= f.select(:category_ids, @categories, { prompt: "Please select" }, { multiple: true, size: 5 }) %>
-  </div>
-  <div class="flex justify-center">
-    <button>Create</button>
-  </div>
-<% end %>
+<div class="page-container flex column justify-center align-center">
+  <h3 class="title">Feeling creative?</h3>
+  <div class="subtitle">Tell everyone how much you like smoking cabbages.</div>
+  <div class="mt-2"><%= render_form_errors @article %></div>
+  <%= form_with model: @article, local: true, class: 'mt-5' do |f| %>
+    <div class="field-row">
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+    </div>
+    <div class="field-row">
+      <%= f.label :text %>
+      <%= f.text_area :text %>
+    </div>
+    <div class="field-row">
+      <%= f.label :image %>
+      <%= f.file_field :image %>
+    </div>
+    <div class="field-row">
+      <%= f.label :category_ids, 'Categories' %>
+      <%= f.select(:category_ids, @categories, { prompt: "Please select" }, { multiple: true, size: 5 }) %>
+    </div>
+    <div class="flex justify-center">
+      <button>Create</button>
+    </div>
+  <% end %>
+</div>

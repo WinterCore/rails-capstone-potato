@@ -1,1 +1,13 @@
-<%= @categories.inspect %>
+<div class="image-article main">
+  <div class="image-article-image" style="background-image: url('<%= @popular_article.image %>')"></div>
+  <div class="image-article-title"><%= @popular_article.title %></div>
+  <div class="image-article-description"><%= limit_text(@popular_article.text) %></div>
+</div>
+
+<div class="items-grid">
+  <% @categories.each do |category| %>
+    <div class="grid-item">
+      <%= render 'category', category: category %>
+    </div>
+  <% end %>
+</div>

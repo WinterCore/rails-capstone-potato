@@ -8,6 +8,17 @@ class Article < ApplicationRecord
     joins(:categories).where(categories: { id: category }) unless category.nil?
   }
 
+  scope :most_voted, lambda {
+    select('articles.*, COUNT(*) as votes_count')
+      .left_joins(:votes)
+      .group(:id)
+      .order(:votes_count)
+  }
+
+  def image_url=(url)
+    write_attribute(:image, url)
+  end
+
   def image=(image)
     extension = File.extname(image)
     path = File.join('uploads', "#{Time.now.to_i}_#{Random.rand(1e9)}#{extension}")
