@@ -25,7 +25,7 @@ class Article < ApplicationRecord
     File.open(Rails.root.join('public', path), 'wb') do |file|
       file.write(image.read)
     end
-    super(path)
+    super("/#{path}")
   end
 
   validates :title, :text, :image, presence: true
