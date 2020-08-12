@@ -1,0 +1,101 @@
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: $secondary;
+  &:hover, &:active {
+    color: $primary;
+  }
+}
+
+body {
+  margin: 0;
+  background: $background;
+  font-family: Lato;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: #FFF;
+}
+
+.page-container {
+  flex: 1;
+}
+
+img {
+  width: 100%;
+}
+
+.toastify {
+  font-family: Lato;
+
+  &.alert {
+    background: $red;
+  }
+
+  &.notice {
+    background: $green;
+  }
+}
+
+.field-row {
+  label, input { display: block; }
+  label {
+    margin-bottom: 6px;
+  }
+  margin-bottom: 16px;
+}
+
+.title {
+  font-size: 42px;
+  margin: 6px;
+}
+
+input {
+  border: 1px solid $secondary;
+  background: $secondary;
+  padding: 4px 6px;
+  color: #FFF;
+}
+
+input[type="submit"], button {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 13px;
+  background: $primary;
+  border: none;
+  color: #FFF;
+  padding: 12px 26px;
+  cursor: pointer;
+  transition: box-shadow 200ms linear;
+  position: relative;
+  border-radius: 30px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  overflow: hidden;
+  &:disabled, .disabled {
+    background: $secondary;
+    cursor: not-allowed;
+  }
+
+  &:after {
+    transition: right 150ms linear, top 150ms linear;
+    content: '';
+    width: 70px;
+    height: 100%;
+    position: absolute;
+    right: -30px;
+    top: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    transform: rotate(-45deg);
+  }
+
+  &:hover {
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    &:after{
+      right: -70px;
+      top: 50px;
+    }
+  }
+}
