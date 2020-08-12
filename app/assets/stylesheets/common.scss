@@ -22,6 +22,7 @@ body {
 
 .page-container {
   flex: 1;
+  padding: 20px 0;
 }
 
 img {
@@ -58,7 +59,7 @@ img {
   color: $primary;
 }
 
-input {
+input, textarea, select {
   width: 100%;
   border: 1px solid $secondary;
   background: $secondary;
@@ -71,6 +72,11 @@ input {
     box-shadow: inset 0px 0px 0 3px $primary;
     outline: 0;
   }
+}
+
+textarea {
+  resize: vertical;
+  font-family: Lato;
 }
 
 input[type="submit"], button {

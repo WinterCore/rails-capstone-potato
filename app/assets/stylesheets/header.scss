@@ -1,5 +1,7 @@
 header {
   height: 72px;
+  max-height: 72px;
+  flex: 1 0 72px;
   position: relative;
   padding: 0 12px;
   font-family: 'CartoGothic Std Book';

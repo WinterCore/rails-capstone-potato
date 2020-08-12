@@ -1,5 +1,7 @@
-<%= @article.errors.full_messages %>
-<%= form_with model: @article, local: true do |f| %>
+<h3 class="title">Feeling creative?</h3>
+<div class="subtitle">Tell everyone how much you like smoking cabbages.</div>
+<div class="mt-2"><%= render_form_errors @article %></div>
+<%= form_with model: @article, local: true, class: 'mt-5' do |f| %>
   <div class="field-row">
     <%= f.label :title %>
     <%= f.text_field :title %>
@@ -16,5 +18,7 @@
     <%= f.label :category_ids, 'Categories' %>
     <%= f.select(:category_ids, @categories, { prompt: "Please select" }, { multiple: true, size: 5 }) %>
   </div>
-  <%= f.submit "Signup" %>
+  <div class="flex justify-center">
+    <button>Create</button>
+  </div>
 <% end %>
