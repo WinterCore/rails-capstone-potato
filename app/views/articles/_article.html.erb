@@ -1,0 +1,26 @@
+<article class="mini-article">
+    <div class="mini-article-image" style="background-image: url('<%= article.image %>')">
+    </div>
+    <div class="mini-article-content">
+        <h2 class="mini-article-title">
+            <% article.categories.each do |category| %>
+            <%= link_to category.name, articles_path(category: category.id)  %>
+            <% end %>
+        </h2>
+        <h3 class="mini-article-secondary-title">
+            <%= article.title %>
+        </h3>
+        <p>
+            <%= limit_text(article.text, 150) %>
+        </p>
+        <div class="flex align-center justify-space-between">
+          <%= link_to 'Read More', '#' %>
+          <div class="flex align-center">
+            <div class="mr-2"><%= article.votes_count %></div>
+            <%= link_to article_vote_path(article), method: :post, class: 'like-icon' do %>
+              <%= image_tag 'like.svg' %>
+            <% end %>
+          </div>
+        </div>
+    </div>
+</article>

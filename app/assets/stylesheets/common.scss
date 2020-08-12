@@ -58,11 +58,11 @@ img {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
 
-  @media (max-width: $media-md) {
+  @media (max-width: $media-xl) {
     & { grid-template-columns: repeat(2, 1fr); }
   }
 
-  @media (max-width: $media-sm) {
+  @media (max-width: $media-md) {
     & { grid-template-columns: repeat(1, 1fr); }
   }
 }

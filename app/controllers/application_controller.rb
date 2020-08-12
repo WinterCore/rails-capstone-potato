@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
   def authenticate
     return if user_logged_in?
 
-    flash[:alert] = 'You need to be logged in before performing this action!'
+    flash[:alert] = 'You need to be logged in to perform this action!'
     redirect_to new_session_path
   end
 end

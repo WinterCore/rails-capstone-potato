@@ -52,6 +52,7 @@ $image-article-padding: 16px;
     font-weight: 800;
     color: #fff;
     border-bottom: 3px solid $yellow;
+    margin: 0;
   }
 
   .image-article-secondary-title {
@@ -61,10 +62,74 @@ $image-article-padding: 16px;
     font-family: Chivo, sans-serif;
   }
 
+  .image-article-description {
+    margin: 0;
+  }
+
   &.small {
     &::after {
       height: 100%;
       background: rgba(0, 0, 0, 0.2);
     }
+  }
+}
+
+.mini-article {
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  height: 100%;
+
+  a { color: $primary; }
+
+  .like-icon img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .mini-article-image {
+    background-size: cover;
+    background-position: center center;
+    padding-top: 100%;
+  }
+
+  .mini-article-content {
+    flex: 1 0 50%;
+    height: 50%;
+    padding: 10px;
+    background: #fff;
+    color: #000;
+    font-family: Chivo, Arial, sans-serif;
+    padding-bottom: 30px;
+  }
+
+  .mini-article-title {
+    margin: 10px 0;
+    color: $primary;
+    font-size: 18px;
+    line-height: 30px;
+
+    a {
+      padding: 4px 0;
+      border-bottom: 2px solid $primary;
+    }
+  }
+
+  .mini-article-secondary-title {
+    font-size: 16px;
+    margin: 0;
+  }
+}
+
+@media (min-width: $media-md) {
+  .grid-item:nth-child(even) .mini-article {
+    .mini-article-image { order: 0; }
+    .mini-article-content { order: 1; }
+  }
+
+  .grid-item:nth-child(odd) .mini-article {
+    .mini-article-image { order: 1; }
+    .mini-article-content { order: 0; }
   }
 }

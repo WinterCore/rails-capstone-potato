@@ -17,7 +17,7 @@
     </div>
     <div class="field-row">
       <%= f.label :category_ids, 'Categories' %>
-      <%= f.select(:category_ids, @categories, { prompt: "Please select" }, { multiple: true, size: 5 }) %>
+      <%= f.select(:category_ids, @categories, {}, { multiple: true, size: 5 }) %>
     </div>
     <div class="flex justify-center">
       <button>Create</button>

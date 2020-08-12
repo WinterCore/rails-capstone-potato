@@ -1,1 +1,7 @@
-<%= @articles.inspect %>
+<div class="items-grid">
+  <% @articles.each_with_index do |article, i| %>
+    <div class="grid-item">
+      <%= render 'article', article: article %>
+    </div>
+  <% end %>
+</div>
