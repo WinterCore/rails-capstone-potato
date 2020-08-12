@@ -10,4 +10,8 @@ module ApplicationHelper
       end
     end
   end
+
+  def render_authentication_links
+    render user_logged_in? ? 'partials/logout_link' : 'partials/authentication_links'
+  end
 end
