@@ -1,0 +1,11 @@
+<header class="flex align-center justify-space-between">
+
+  <%= image_tag('logo.png', class: 'logo') %>
+  <nav class="flex">
+    <div class="nav-item"><%= link_to 'Home', root_path %></div>
+    <div class="nav-item"><%= link_to 'Write an article', new_article_path %></div>
+  </nav>
+  <div class="action-links">
+    <%= render_authentication_links %>
+  </div>
+</header>
