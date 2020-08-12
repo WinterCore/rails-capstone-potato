@@ -3,7 +3,11 @@ class ArticlesController < ApplicationController
   before_action :authenticate, only: %i[new create vote]
 
   def index
-    @articles = Article.belong_to_category(params[:category]).most_voted
+    @articles = Article
+      .includes(:author)
+      .belong_to_category(params[:category])
+      .with_votes
+      .order(created_at: :desc)
   end
 
   def new

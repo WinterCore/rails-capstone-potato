@@ -5,15 +5,10 @@ class Article < ApplicationRecord
   has_many :voters, through: :votes, source: :user
 
   scope :belong_to_category, lambda { |category|
-    joins(:categories).where(categories: { id: category }) unless category.nil?
-  }
-
-  scope :most_voted, lambda {
-    select('articles.*, COUNT(votes.user_id) as votes_count')
-      .left_joins(:votes)
-      .group(:id)
-      .order(votes_count: :desc)
-  }
+                               joins(:categories).where(categories: { id: category }) unless category.nil?
+                             }
+  scope :with_votes, -> { select('articles.*, COUNT(votes.user_id) as votes_count').left_joins(:votes).group(:id) }
+  scope :most_voted, -> { with_votes.order(votes_count: :desc) }
 
   def image_url=(url)
     write_attribute(:image, url)
