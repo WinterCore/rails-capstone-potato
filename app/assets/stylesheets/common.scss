@@ -41,6 +41,7 @@ img {
 }
 
 .field-row {
+  width: 100%;
   label, input { display: block; }
   label {
     margin-bottom: 6px;
@@ -53,11 +54,23 @@ img {
   margin: 6px;
 }
 
+.form-errors {
+  color: $primary;
+}
+
 input {
+  width: 100%;
   border: 1px solid $secondary;
   background: $secondary;
-  padding: 4px 6px;
+  padding: 8px 12px;
   color: #FFF;
+  box-shadow: inset 0px 0px 0 1px $primary;
+  transition: box-shadow 100ms linear;
+  border: none;
+  &:focus {
+    box-shadow: inset 0px 0px 0 3px $primary;
+    outline: 0;
+  }
 }
 
 input[type="submit"], button {
@@ -91,7 +104,8 @@ input[type="submit"], button {
     transform: rotate(-45deg);
   }
 
-  &:hover {
+  &:hover, &:focus {
+    outline: 0;
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
     &:after{
       right: -70px;

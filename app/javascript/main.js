@@ -1,7 +1,7 @@
 window.showAlertToast = function showAlertToast(text) {
   Toastify({
     text: text,
-    duration: 3000,
+    duration: 5000,
     close: true,
     gravity: "top",
     position: "right",
@@ -13,7 +13,7 @@ window.showAlertToast = function showAlertToast(text) {
 window.showNoticeToast = function showNoticeToast(text) {
   Toastify({
     text: text,
-    duration: 3000,
+    duration: 5000,
     close: true,
     gravity: "top",
     position: "right",

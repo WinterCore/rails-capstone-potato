@@ -2,7 +2,8 @@ module ApplicationHelper
   def render_flash(type)
     javascript_tag do
       return if flash[type].nil?
-      raise "Unknown flash type" unless [:alert, :notice].include?(type)
+      raise 'Unknown flash type' unless %i[alert notice].include?(type)
+
       if type == :alert
         "showAlertToast('#{flash[:alert]}');".html_safe
       else
@@ -13,5 +14,9 @@ module ApplicationHelper
 
   def render_authentication_links
     render user_logged_in? ? 'partials/logout_link' : 'partials/authentication_links'
+  end
+
+  def render_form_errors(resource)
+    render 'partials/form_errors', resource: resource if resource.errors.any?
   end
 end
