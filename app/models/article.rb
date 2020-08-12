@@ -9,10 +9,10 @@ class Article < ApplicationRecord
   }
 
   scope :most_voted, lambda {
-    select('articles.*, COUNT(*) as votes_count')
+    select('articles.*, COUNT(votes.user_id) as votes_count')
       .left_joins(:votes)
       .group(:id)
-      .order(:votes_count)
+      .order(votes_count: :desc)
   }
 
   def image_url=(url)
