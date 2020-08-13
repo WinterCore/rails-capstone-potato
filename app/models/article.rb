@@ -10,20 +10,19 @@ class Article < ApplicationRecord
   scope :with_votes, -> { select('articles.*, COUNT(votes.user_id) as votes_count').left_joins(:votes).group(:id) }
   scope :most_voted, -> { with_votes.order(votes_count: :desc) }
 
-  def image_url=(url)
-    write_attribute(:image, url)
-  end
-
-  def image=(image)
-    extension = File.extname(image)
-    path = File.join('uploads', "#{Time.now.to_i}_#{Random.rand(1e9)}#{extension}")
-    File.open(Rails.root.join('public', path), 'wb') do |file|
-      file.write(image.read)
+  def image_file=(image)
+    if image.instance_of?(ActionDispatch::Http::UploadedFile)
+      extension = File.extname(image)
+      path = File.join('uploads', "#{Time.now.to_i}_#{Random.rand(1e9)}#{extension}")
+      File.open(Rails.root.join('public', path), 'wb') do |file|
+        file.write(image.read)
+      end
+      write_attribute(:image, "/#{path}")
+    elsif image.is_a?(String)
+      write_attribute(:image, image)
     end
-    super("/#{path}")
   end
 
-  validates :title, :text, :image, presence: true
+  validates :title, :text, :image, :category_ids, presence: true
   validates :title, length: { minimum: 3, maximum: 255 }
-  validates :category_ids, presence: true
 end
