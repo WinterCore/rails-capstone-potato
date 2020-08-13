@@ -4,26 +4,26 @@
   font-family: 'CartoGothic Std Book';
   font-style: normal;
   font-weight: normal;
-  src: local('CartoGothic Std Book'), url('CartoGothicStd-Book.woff') format('woff');
+  src: local('CartoGothic Std Book'), font-url('CartoGothicStd-Book.woff') format('woff');
 }
 
 @font-face {
   font-family: 'CartoGothic Std Italic';
   font-style: normal;
   font-weight: normal;
-  src: local('CartoGothic Std Italic'), url('CartoGothicStd-Italic.woff') format('woff');
+  src: local('CartoGothic Std Italic'), font-url('CartoGothicStd-Italic.woff') format('woff');
 }
 
 @font-face {
   font-family: 'CartoGothic Std Bold';
   font-style: normal;
   font-weight: normal;
-  src: local('CartoGothic Std Bold'), url('CartoGothicStd-Bold.woff') format('woff');
+  src: local('CartoGothic Std Bold'), font-url('CartoGothicStd-Bold.woff') format('woff');
 }
 
 @font-face {
   font-family: 'CartoGothic Std Bold Italic';
   font-style: normal;
   font-weight: normal;
-  src: local('CartoGothic Std Bold Italic'), url('CartoGothicStd-BoldItalic.woff') format('woff');
+  src: local('CartoGothic Std Bold Italic'), font-url('CartoGothicStd-BoldItalic.woff') format('woff');
 }
