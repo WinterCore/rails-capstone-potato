@@ -10,4 +10,8 @@ module HomeHelper
       category.image
     end
   end
+
+  def render_full_width_article
+    render 'home/full_width_article', article: @popular_article unless @popular_article.nil?
+  end
 end

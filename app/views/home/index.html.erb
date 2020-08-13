@@ -1,9 +1,4 @@
-<div class="image-article main">
-  <div class="image-article-image" style="background-image: url('<%= @popular_article.image %>')"></div>
-  <h2 class="image-article-title"><%= @popular_article.title %></h2>
-  <h4 class="image-article-description"><%= limit_text(@popular_article.text) %></h4>
-</div>
-
+<%= render_full_width_article %>
 <div class="items-grid">
   <% @categories.each do |category| %>
     <div class="grid-item">
