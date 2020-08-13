@@ -3,7 +3,7 @@ window.showAlertToast = function showAlertToast(text) {
     text: text,
     duration: 5000,
     close: true,
-    gravity: "top",
+    gravity: "bottom",
     position: "right",
     stopOnFocus: true,
     className : "alert"
@@ -15,7 +15,7 @@ window.showNoticeToast = function showNoticeToast(text) {
     text: text,
     duration: 5000,
     close: true,
-    gravity: "top",
+    gravity: "bottom",
     position: "right",
     stopOnFocus: true,
     className : "notice"
