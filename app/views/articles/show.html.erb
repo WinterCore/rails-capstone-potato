@@ -1,0 +1,26 @@
+<article class="full-page-article">
+  <div class="article-image" style="background-image: url('<%= @article.image %>')">
+  </div>
+  <div class="article-content">
+    <h1 class="article-title">
+      <%= @article.title %>
+    </h1>
+    <div class="article-author">
+      By <%= @article.author.name %>
+    </div>
+    <p>
+      <%= @article.text %>
+    </p>
+    <div class="article-actions flex justify-space-between w-100">
+      <div class="flex align-center">
+        <% votes = @article.votes.count %>
+        <div class="mr-2"><%= votes %>&nbsp;<%= 'Vote'.pluralize(votes) %></div>
+        <%= link_to article_votes_path(@article), method: :post, class: 'like-icon' do %>
+          <%= image_tag 'like.svg' %>
+        <% end %>
+      </div>
+      <%= @article.created_at.strftime('%B %e, %Y') %>
+    </div>
+  </div>
+</article>
+<%= render 'articles/article_comments' %>

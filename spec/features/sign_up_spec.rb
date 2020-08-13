@@ -38,4 +38,3 @@ RSpec.describe 'Sign Up', type: :feature do
     expect(page).to have_content("Name can't be blank")
   end
 end
-

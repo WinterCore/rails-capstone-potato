@@ -2,6 +2,8 @@ footer {
   font-size: 13px;
   height: $footer-height;
   padding: 0 16px;
+  background: $background;
+  color: #fff;
 
   .logo {
     font-weight: 800;

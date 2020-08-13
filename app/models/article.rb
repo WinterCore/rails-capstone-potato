@@ -3,6 +3,7 @@ class Article < ApplicationRecord
   has_and_belongs_to_many :categories
   has_many :votes
   has_many :voters, through: :votes, source: :user
+  has_many :comments, -> { order(created_at: :desc) }
 
   scope :belong_to_category, lambda { |category|
                                joins(:categories).where(categories: { id: category }) unless category.nil?

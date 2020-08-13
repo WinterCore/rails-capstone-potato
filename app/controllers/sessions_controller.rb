@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
 
   def create
     # This is done to make the login case insensitive
-    @user = User.where('lower(username) = ?', user_params[:username]).first
+    @user = User.where('lower(username) = ?', user_params[:username].downcase).first
     if @user.nil?
       flash[:alert] = 'User not found!'
       redirect_to new_session_path

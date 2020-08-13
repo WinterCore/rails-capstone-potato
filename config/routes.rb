@@ -7,8 +7,9 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new, :create]
   delete 'sessions', to: 'sessions#destroy'
 
-  resources :articles, only: [:index, :new, :create] do
-    post 'vote', to: 'articles#vote'
+  resources :articles, only: [:index, :new, :create, :show] do
+    resources :votes, only: [:create]
+    resources :comments, only: [:create]
   end
 
   root 'home#index'

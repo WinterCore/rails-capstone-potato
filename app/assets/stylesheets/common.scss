@@ -14,10 +14,9 @@ a {
 
 body {
   margin: 0;
-  background: $background;
+  background: #fff;
   font-family: Lato, sans-serif;
   min-height: 100vh;
-  color: #fff;
 }
 
 .page-container-outer {
@@ -27,6 +26,8 @@ body {
 .page-container {
   padding: 20px 0;
   min-height: calc(100vh - #{$header-height} - #{$footer-height});
+  background: $background;
+  color: #fff;
 }
 
 img {

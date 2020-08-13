@@ -13,6 +13,7 @@ $image-article-padding: 16px;
   justify-content: flex-end;
   padding: $image-article-padding;
   padding-top: 75%;
+  color: #fff;
 
   &::after {
     content: '';
@@ -84,11 +85,6 @@ $image-article-padding: 16px;
 
   a { color: $primary; }
 
-  .like-icon img {
-    width: 24px;
-    height: 24px;
-  }
-
   .mini-article-image {
     background-size: cover;
     background-position: center center;
@@ -121,6 +117,83 @@ $image-article-padding: 16px;
   .mini-article-secondary-title {
     font-size: 16px;
     margin: 0;
+  }
+}
+
+.like-icon img {
+  width: 24px;
+  height: 24px;
+}
+
+.full-page-article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: $background;
+  padding-bottom: 30px;
+  color: #fff;
+
+  .article-content {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 32px 0;
+  }
+
+  .article-image {
+    min-height: 300px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 100%;
+  }
+
+  .article-title {
+    font-weight: 900;
+    font-size: 50px;
+    margin: 16px 0;
+  }
+
+  p,
+  .article-actions {
+    max-width: 1200px;
+    padding: 0 20px;
+  }
+}
+
+.article-comments-outer {
+  width: 100%;
+
+  .article-comments-container {
+    padding: 32px 0;
+  }
+
+  .subtitle {
+    font-weight: bold;
+    font-size: 18px;
+    color: $primary;
+  }
+
+  .article-comments {
+    max-width: 1000px;
+    width: 100%;
+    padding: 0 32px;
+  }
+
+  .comment {
+    margin: 32px 0;
+  }
+
+  .comment-author {
+    font-weight: bold;
+    margin: 0;
+    font-size: 18px;
+  }
+
+  .comment-date {
+    font-size: 14px;
   }
 }
 

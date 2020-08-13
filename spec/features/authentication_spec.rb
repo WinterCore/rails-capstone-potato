@@ -18,4 +18,3 @@ RSpec.describe 'Authentication', type: :feature do
     expect(page).to have_content('LOGIN')
   end
 end
-

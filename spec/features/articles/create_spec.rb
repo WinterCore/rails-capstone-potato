@@ -6,7 +6,7 @@ require './spec/support/authentication_helpers'
 RSpec.describe 'Create new articles', type: :feature do
   include ModelHelpers
   include AuthenticationHelpers
-  let(:user)     { User.create user_data }
+  let(:user) { User.create user_data }
   let(:category) { Category.create category_data }
 
   scenario 'Does not allow unauthenticated users to create events' do
@@ -31,7 +31,7 @@ RSpec.describe 'Create new articles', type: :feature do
 
     fill_in 'article[title]', with: Faker::Lorem.sentence
     fill_in 'article[text]', with: Faker::Lorem.paragraph
-    select category.name, from: "article[category_ids][]"
+    select category.name, from: 'article[category_ids][]'
     attach_file('article[image_file]', Rails.root.join('app', 'assets', 'images', 'logo.png'))
     click_button 'Create'
 
@@ -39,4 +39,3 @@ RSpec.describe 'Create new articles', type: :feature do
     expect(page).to have_content(Article.first.title)
   end
 end
-

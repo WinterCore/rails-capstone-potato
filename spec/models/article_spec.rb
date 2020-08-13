@@ -6,6 +6,7 @@ RSpec.describe Article, type: :model do
     it { should have_and_belong_to_many(:categories) }
     it { should have_many(:votes) }
     it { should have_many(:voters).through(:votes).source(:user) }
+    it { should have_many(:comments) }
   end
 
   describe 'validations' do
