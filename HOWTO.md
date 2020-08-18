@@ -1,8 +1,8 @@
 # HOWTO table of contents
 ## [How to run locally](#Running-the-project-locally)
-- [Installing Ruby & Rails](#Installing-Ruby-&-Rails)
+- [Installing Ruby & Rails](#Installing-Ruby--Rails)
 - [Cloning this Repository](#Cloning-This-Repository)
-- [Installing & Configuring Postgres](#Installing-&-Configuring-Postgres)
+- [Installing & Configuring Postgres](#Installing--Configuring-Postgres)
 - [Installing Dependencies](#Installing-Dependencies)
 - [Running Migrations & Seeds](#Running-Migrations-and-Seeds)
 - [Starting the Application](#Starting-The-Application)
@@ -70,7 +70,7 @@ host    all             all             ::1/128                 trust
 ```
 These lines instruct postgres to not require a password from connections made from localhost.
 
-To find more details about this config file visit [this link](https://www.postgresql.org/docs/10/auth-pg-hba-conf.html) 
+To find more details about this config file visit [this link](https://www.postgresql.org/docs/10/auth-pg-hba-conf.html)
 
 
 ## Installing Dependencies
@@ -96,6 +96,6 @@ First of all you need to create the test database. You can do that by running th
 ```bash
 createdb potato_test -O <your username>
 ```
-If that doesn't work, refer to the [Installing & configuring postgres](#Installing-&-configuring-postgres) and [Creating the project's database](#Creating-the-project's-database).
+If that doesn't work, refer to the [Installing & configuring postgres](#Installing--configuring-postgres) and [Creating the project's database](#Creating-the-projects-database).
 
 Lastly. Running the tests is as simple as running `bundle exec rspec spec` in the root directory of this project.
