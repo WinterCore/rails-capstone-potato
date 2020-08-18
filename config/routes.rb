@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new, :create]
   delete 'sessions', to: 'sessions#destroy'
 
-  resources :articles, only: [:index, :new, :create, :show] do
+  resources :articles, except: [:edit, :update, :destroy] do
     resources :votes, only: [:create]
     resources :comments, only: [:create]
   end
