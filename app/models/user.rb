@@ -4,7 +4,7 @@ class User < ApplicationRecord
   has_many :votes
   has_many :voted_articles, through: :votes, source: :article
 
-  validates :name, presence: true
-  validates :username, presence: true
+  validates :name, presence: true, length: { maximum: 255 }
+  validates :username, presence: true, length: { maximum: 255 }
   validates_uniqueness_of :username, case_sensitive: false
 end
