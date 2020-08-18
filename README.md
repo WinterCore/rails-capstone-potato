@@ -1,24 +1,18 @@
 # Potato Articles
 
-<br />
-<p align="center">
-  <a href="https://github.com/WinterCore/rails-capstone-potato">
-    <img src="rails-image.jpg" alt="Logo" width="80" height="80">
-  </a>
+## This application is supposed to be a mini blog about vegetables and mainly potatos.
 
-  <h3 align="center">Potato Articles</h3>
-
-  <p align="center">
-    This website is supposed to be a blog about vegetables and mainly potatos 🥔 where people can register, create articles, write comments, and give votes.
-    <br />
-    <br />
-    <a href="https://github.com/WinterCore/rails-capstone-potato/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/WinterCore/rails-capstone-potato/issues">Request Feature</a>
-  </p>
-</p>
+## Features
+- Registration & Login
+- Ability to create posts that belong to multiple categories and contain images.
+- Ability to vote for posts.
+- Ability to comment on posts
 
 ![screenshot](./demo.gif)
+
+## [Live Demo](https://potato.upperdown.me)
+
+## [How to Run Locally & Run Rspec Tests](HOWTO.md) 
 
 ## Built With
 
@@ -29,45 +23,16 @@
 - Github Actions
 - Postgresql
 
-## Live Demo
 
-[Live Demo Link](https://potato.upperdown.me)
-
-
-## Usage
-
-To have this app on your pc, you need to:
-* have Ruby & Ruby on Rails installed in your computer
-* [download](https://github.com/WinterCore/rails-capstone-potato/archive/development.zip) or clone this repo:
-  - Clone with SSH:
-  ```
-    git@github.com:WinterCore/rails-capstone-potato.git
-  ```
-  - Clone with HTTPS
-  ```
-    https://github.com/WinterCore/rails-capstone-potato.git
-  ```
-* and open the terminal inside the repo and run the bundler
-  - ```$ bundler install --without production```
-* then, run rails db:migrate. This creates the database with the corresponding tables, columns and associations
-  - ```$ rails db:migrate``` and ```rails db:seed```
-* then, run rails s. This will start the server at localhost `http://127.0.0.1:3000/`
-  - ```$ rails s```
-* and finally, you can test it in the console by running
-  - ```$ rails console --sandbox```
-
-<!-- AUTOMATED TEST -->
-### Automated Test
-
-We use RSpec and Capybara to perform tests.
-
-To run them just go to the root folder and use ```rspec```
+## Quick Note
+This project requires ruby >= 2.7.1.
+Please do not try to run this project using an older version of ruby. Some people tried doing that and complained about having syntax errors.
 
 ## Authors
 
 👤 **Hasan Kharouf**
 
-- Github: [@wintercore](https://github.com/wintercore)
+- Github: [@WinterCore](https://github.com/wintercore)
 
 ## 🤝 Contributing
 
