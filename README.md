@@ -1,24 +1,50 @@
-# README
+# Potato Articles
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## This application is supposed to be a mini blog about vegetables and mainly potatos.
 
-Things you may want to cover:
+## Features
+- Registration & Login
+- Ability to create posts that belong to multiple categories and contain images.
+- Ability to vote for posts.
+- Ability to comment on posts
 
-* Ruby version
+![screenshot](./demo.gif)
 
-* System dependencies
+## [Live Demo](https://potato.upperdown.me)
 
-* Configuration
+## [How to Run Locally & Run Rspec Tests](HOWTO.md) 
 
-* Database creation
+## Built With
 
-* Database initialization
+- Ruby On Rails
+- Neovim
+- Rubocop
+- Stylelint
+- Github Actions
+- Postgresql
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+## Quick Note
+This project requires ruby >= 2.7.1.
+Please do not try to run this project using an older version of ruby. Some people tried doing that and complained about having syntax errors.
 
-* Deployment instructions
+## Authors
 
-* ...
+👤 **Hasan Kharouf**
+
+- Github: [@WinterCore](https://github.com/wintercore)
+
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!
+
+Feel free to check the [issues page](issues/).
+
+## Acknowledgments
+
+- Microverse
+- [Design](https://www.behance.net/gallery/14554909/liFEsTlye-Mobile-version) by [Nelson Sakwa](https://www.behance.net/sakwadesignstudio)
+
+## 📝 License
+
+This project is [MIT](lic.url) licensed.

@@ -1,0 +1,19 @@
+<div class="page-container flex column justify-center align-center">
+  <h3 class="title">Hey There</h3>
+  <div class="subtitle">Looking for that sweet potato stuff? Join us today!</div>
+  <div class="mt-2"><%= render_form_errors @user %></div>
+  <%= form_with model: @user, local: true, class: 'mt-5' do |f| %>
+    <div class="field-row">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+
+    <div class="field-row">
+      <%= f.label :username %>
+      <%= f.text_field :username %>
+    </div>
+    <div class="flex justify-center">
+      <button>Signup</button>
+    </div>
+  <% end %>
+</div>

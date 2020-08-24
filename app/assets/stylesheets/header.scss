@@ -1,0 +1,50 @@
+header {
+  height: $header-height;
+  max-height: $header-height;
+  flex: 1 0 $header-height;
+  position: relative;
+  padding: 0 12px;
+  font-family: 'CartoGothic Std Book', sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  color: $secondary;
+  background: #fff;
+
+  .logo {
+    width: 150px;
+  }
+
+  &::before,
+  &::after {
+    content: '';
+    height: 4px;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+
+  &::before {
+    background-color: $secondary;
+    width: 100%;
+    z-index: 1;
+  }
+
+  &::after {
+    background-color: $red;
+    width: 160px;
+    z-index: 2;
+  }
+
+  nav {
+    text-transform: uppercase;
+
+    .nav-item + .nav-item {
+      margin-left: 12px;
+    }
+  }
+
+  .action-links {
+    text-transform: uppercase;
+  }
+}

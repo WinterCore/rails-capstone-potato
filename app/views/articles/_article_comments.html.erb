@@ -1,0 +1,21 @@
+<div class="article-comments-outer flex column align-center">
+  <div class="article-comments-container">
+    <div class="subtitle">Want to tell the author how much you hated this article?</div>
+    <div class="mt-2"><%= render_form_errors @comment %></div>
+    <%= form_with model: @comment, url: article_comments_path(@article), local: true, class: 'mt-5 flex column align-center' do |f| %>
+      <div class="field-row">
+        <%= f.label :content, 'Your comment' %>
+        <%= f.text_area :content %>
+      </div>
+      <div lcass="flex justify-center">
+        <button>Comment</button>
+      </div>
+    <% end %>
+  </div>
+  <h3>Comments</h3>
+  <div class="article-comments">
+    <% @article.comments.each do |comment| %>
+      <%= render 'articles/article_comment', comment: comment %>
+    <% end %>
+  </div>
+</div>

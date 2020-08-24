@@ -1,15 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>LifestyleArticles</title>
+    <title>PotatoArticles</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap' %>
+    <%= stylesheet_link_tag 'https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap' %>
+    <%= stylesheet_link_tag 'https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css' %>
+    <%= javascript_include_tag 'https://cdn.jsdelivr.net/npm/toastify-js', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
-  <body>
-    <%= yield %>
+  <body class="flex column">
+    <%= render 'layouts/header' %>
+    <%= render_flash(:alert) %>
+    <%= render_flash(:notice) %>
+    <div class="page-container-outer">
+      <%= yield %>
+    </div>
+    <%= render 'layouts/footer' %>
   </body>
 </html>

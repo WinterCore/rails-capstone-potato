@@ -1,0 +1,11 @@
+<div class="comment">
+  <div class="flex justify-space-between">
+    <h5 class="comment-author"><%= comment.author.name %></h5>
+    <div class="comment-date">
+      <%= distance_of_time_in_words(comment.created_at, Time.now) %> ago
+    </div>
+  </div>
+  <p>
+    <%= comment.content %>
+  </p>
+</div>

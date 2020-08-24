@@ -1,0 +1,8 @@
+<%= render_full_width_article %>
+<div class="items-grid">
+  <% @categories.each do |category| %>
+    <div class="grid-item">
+      <%= render 'category', category: category %>
+    </div>
+  <% end %>
+</div>

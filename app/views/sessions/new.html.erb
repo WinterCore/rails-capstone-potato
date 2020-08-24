@@ -1,0 +1,13 @@
+<div class="page-container flex column justify-center align-center">
+  <h3 class="title">Welcome back</h3>
+  <div class="subtitle">Looking for some potatos?</div>
+  <%= form_with model: @user, url: sessions_path, local: true, class: 'mt-5' do |f| %>
+    <div class="field-row">
+      <%= f.label :username %>
+      <%= f.text_field :username %>
+    </div>
+    <div class="flex justify-center">
+      <button>Signin</button>
+    </div>
+  <% end %>
+</div>
